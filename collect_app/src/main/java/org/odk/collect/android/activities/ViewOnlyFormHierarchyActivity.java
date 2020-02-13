@@ -14,6 +14,7 @@
 
 package org.odk.collect.android.activities;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
@@ -39,10 +40,18 @@ public class ViewOnlyFormHierarchyActivity extends FormHierarchyActivity {
         });
 
         Button printButton = findViewById(R.id.printButton);
-        printButton.setOnClickListener(v -> {
+        /*printButton.setOnClickListener(v -> {
             setResult(RESULT_OK);
             finish();
         });
+        */
+        printButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ViewOnlyFormHierarchyActivity.this, PrintFormInstanceActivity.class));
+            }
+        });
+
 
         printButton.setVisibility(View.VISIBLE);
         exitButton.setVisibility(View.VISIBLE);

@@ -12,10 +12,14 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+
+import org.apache.commons.io.FileUtils;
 import org.odk.collect.android.R;
+import org.odk.collect.android.application.Collect;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
@@ -48,8 +52,18 @@ public class PrintFormInstanceActivity extends Activity {
 
         //Reading XSLT
         String strXSLT = GetStyleSheet(R.raw.xsltfile);
+
         //Reading XML
-        String strXML = GetStyleSheet(R.raw.xmlfile);
+
+        File InstanceXmlFile = Collect.getInstance().getFormController().getInstanceFile();
+
+        String strXML = null;
+        try {
+            strXML = FileUtils.readFileToString(InstanceXmlFile, "utf-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         /*
          * Loading XSLT...
          */
@@ -83,6 +97,8 @@ public class PrintFormInstanceActivity extends Activity {
 
     }
 
+    /** Google's WebView print code **/
+
     private void createWebPrintJob(WebView webView) {
 
         // Get a PrintManager instance
@@ -106,9 +122,10 @@ public class PrintFormInstanceActivity extends Activity {
         // printJobs.add(printJob);
     }
 
-    /*
-     * Transform XSLT to HTML string
-     */
+
+    /**
+     * Transform XML and XSLT to HTML string
+     **/
     public static String StaticTransform(String strXsl, String strXml) {
         String html = "";
 
@@ -153,9 +170,9 @@ public class PrintFormInstanceActivity extends Activity {
         return html;
     }
 
-    /*
-     * Read file from res/raw...
-     */
+    /**
+     * Read XSLT file from res/raw...
+     **/
     private String GetStyleSheet(int fileId) {
         String strXsl = null;
 
@@ -180,4 +197,7 @@ public class PrintFormInstanceActivity extends Activity {
         return strXsl;
 
     }
+
+
+
 }

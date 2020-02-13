@@ -24,11 +24,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </style>
 </head>
 <body> 
-<font face = "Arial">
+
 	<xsl:choose>
 		<xsl:when test="/*/@id = 'ficha_19'">
+			<img src="file:///android_res/drawable/logo_ecociencia.png"/>
 			<h1 align="center">42 - Registro y reacción ante presiones</h1> 
-			<!-- <table style = "width:100%" border="1" align="center" >	-->
 				<table id="formularios">
 				<tr> 
 					<td>Tipo de presion o amenaza</td> 
@@ -112,7 +112,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<h1 align="center">Unable to print this Form Template - please contact a developer to add it to the XSLT</h1>
 		</xsl:otherwise>
 	</xsl:choose>
-</font>
 </body> 
 </html> 
 </xsl:template> 

@@ -38,6 +38,13 @@ public class ViewOnlyFormHierarchyActivity extends FormHierarchyActivity {
             finish();
         });
 
+        Button printButton = findViewById(R.id.printButton);
+        printButton.setOnClickListener(v -> {
+            setResult(RESULT_OK);
+            finish();
+        });
+
+        printButton.setVisibility(View.VISIBLE);
         exitButton.setVisibility(View.VISIBLE);
 
         jumpBeginningButton.setVisibility(View.GONE);

@@ -466,6 +466,7 @@
     <string name="encrypted_form">Encrypted form</string>
     <string name="deleted_form">Deleted form</string>
     <string name="exit">Exit</string>
+    <string name="print">Print</string>
     <string name="instance_scan_completed">Finished scanning.</string>
     <string name="instance_scan_count">%1$d forms added.</string>
     <string name="instance_sync">Finalize forms on import</string>

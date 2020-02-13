@@ -4,18 +4,35 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/"> 
 
 <html> 
+<head>
+<style>
+#formularios {
+  font-family: Arial;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#formularios td, #formularios th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#formularios td:nth-child(1) {
+  background-color: #f2f2f2;
+}
+
+</style>
+</head>
 <body> 
+<font face = "Arial">
 	<xsl:choose>
 		<xsl:when test="/*/@id = 'ficha_19'">
-			<h1 align="center">Adam Test</h1> 
-			<table style = "width:100%" border="3" align="center" >		
+			<h1 align="center">42 - Registro y reacción ante presiones</h1> 
+			<!-- <table style = "width:100%" border="1" align="center" >	-->
+				<table id="formularios">
 				<tr> 
-					<th>Question</th> 
-					<th>Answer</th> 
-				</tr> 
-				<tr> 
-					<td>Start time</td> 
-					<td><xsl:value-of select="ficha_42/start"/></td> 
+					<td>Tipo de presion o amenaza</td> 
+					<td><xsl:value-of select="ficha_42/datos_press/press"/></td> 
 				</tr> 
 				<tr>
 					<td>Device ID</td> 
@@ -66,8 +83,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<td><xsl:value-of select="ficha_42/datos_press/cedula"/></td> 
 				</tr>
 				<tr>
-					<td bgcolor="lightgray"><b>Categoria de fauna</b></td> 
-					<td bgcolor="lightgray"><xsl:value-of select="ficha_42/comienzo_categoria_fauna/fauna/categoria_fauna"/></td> 
+					<td><b>Categoria de fauna</b></td> 
+					<td><xsl:value-of select="ficha_42/comienzo_categoria_fauna/fauna/categoria_fauna"/></td> 
 				</tr>
 				<tr>
 					<td>Tipo de fauna</td> 
@@ -107,6 +124,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<h1 align="center">Unable to print this Form Template - please contact a developer to add it to the XSLT</h1>
 		</xsl:otherwise>
 	</xsl:choose>
+</font>
 </body> 
 </html> 
 </xsl:template> 

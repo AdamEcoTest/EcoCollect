@@ -106,6 +106,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<td>Firma</td> 
 					<td> </td> 
 				</tr>
+				
+				
 			</table> 
 		</xsl:when>
 		<xsl:otherwise>

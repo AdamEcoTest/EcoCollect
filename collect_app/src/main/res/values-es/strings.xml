@@ -221,6 +221,7 @@
   <string name="swipe_buttons_navigation">Use deslizar y botones</string>
   <string name="launch_printer">Iniciar Impresión</string>
   <string name="no_printer">La impresora solicitado no está instalada. Por favor, instale la impresora.</string>
+  <string name="print">Imprimir</string>
   <string name="constraint_behavior">Manejo de las restricciones</string>
   <string name="constraint_behavior_on_swipe">Validar al desplazar hacia delante.</string>
   <string name="constraint_behavior_on_finalize">Postponer validación hasta el final</string>

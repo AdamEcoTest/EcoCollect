@@ -35,15 +35,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<td><xsl:value-of select="ficha_42/datos_press/press"/></td> 
 				</tr> 
 				<tr>
-					<td>Device ID</td> 
-					<td><xsl:value-of select="ficha_42/deviceid"/></td> 
-				</tr>
-				<tr>
-					<td>Press</td> 
-					<td><xsl:value-of select="ficha_42/datos_press/press"/></td> 
-				</tr>
-				<tr>
-					<td>Nombre de veedor</td> 
+					<td>Nombre del veedor</td> 
 					<td><xsl:value-of select="ficha_42/datos_press/veedor"/></td> 
 				</tr>
 				<tr>
@@ -51,24 +43,32 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<td><xsl:value-of select="ficha_42/datos_press/comunidad"/></td> 
 				</tr>
 				<tr>
-					<td>Fecha</td> 
+					<td>Fecha del evento</td> 
 					<td><xsl:value-of select="ficha_42/datos_press/fecha"/></td> 
 				</tr>
 				<tr>
-					<td>Hora</td> 
+					<td>Hora del evento</td> 
 					<td><xsl:value-of select="ficha_42/datos_press/hora"/></td> 
 				</tr>
 				<tr>
-					<td>Coordenadas</td> 
+					<td>Tomar punto GPS</td> 
 					<td><xsl:value-of select="ficha_42/datos_press/coordenadas"/></td> 
 				</tr>
 				<tr>
-					<td>Descripcion de sitio</td> 
+					<td>Descripción del Sitio</td> 
 					<td><xsl:value-of select="ficha_42/datos_press/descripcion_sitio"/></td> 
 				</tr>
 				<tr>
-					<td>Nombre de causante</td> 
+					<td>Nombre del causante</td> 
 					<td><xsl:value-of select="ficha_42/datos_press/causante_nombre"/></td> 
+				</tr>
+				<tr>
+					<td>Tomar foto</td> 
+					<td><xsl:value-of select="ficha_42/datos_press/foto"/></td> 
+				</tr>
+				<tr>
+					<td>Número de cédula</td> 
+					<td><xsl:value-of select="ficha_42/datos_press/cedula"/></td> 
 				</tr>
 				<tr>
 					<td>Evento de causante</td> 

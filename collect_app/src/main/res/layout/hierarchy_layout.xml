@@ -57,7 +57,7 @@ the License.
             android:id="@+id/exitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:padding="12dp"
             android:text="@string/exit"
             android:textAllCaps="false"
@@ -73,7 +73,10 @@ the License.
             android:text="@string/print"
             android:textAllCaps="false"
             android:textSize="16sp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableStart="@drawable/printer"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

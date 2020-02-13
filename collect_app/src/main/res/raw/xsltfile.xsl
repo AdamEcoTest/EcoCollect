@@ -71,18 +71,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<td><xsl:value-of select="ficha_42/datos_press/cedula"/></td> 
 				</tr>
 				<tr>
-					<td>Evento de causante</td> 
-					<td><xsl:value-of select="ficha_42/datos_press/causante_evento"/></td> 
-				</tr>
-				<tr>
-					<td>Foto</td> 
-					<td><xsl:value-of select="ficha_42/datos_press/foto"/></td> 
-				</tr>
-				<tr>
-					<td>Cedula</td> 
-					<td><xsl:value-of select="ficha_42/datos_press/cedula"/></td> 
-				</tr>
-				<tr>
 					<td><b>Categoria de fauna</b></td> 
 					<td><xsl:value-of select="ficha_42/comienzo_categoria_fauna/fauna/categoria_fauna"/></td> 
 				</tr>

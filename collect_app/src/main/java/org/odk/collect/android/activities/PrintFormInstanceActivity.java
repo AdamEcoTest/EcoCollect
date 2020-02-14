@@ -64,9 +64,7 @@ public class PrintFormInstanceActivity extends Activity {
             e.printStackTrace();
         }
 
-        /*
-         * Loading XSLT...
-         */
+
         //Transform ...
         String html = StaticTransform(strXSLT, strXML);
 

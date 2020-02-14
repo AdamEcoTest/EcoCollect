@@ -29,6 +29,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   font-weight: bold;
 }
 
+h1  {
+  text-align: center;
+   margin-bottom: 40px;
+}
+
 
 </style>
 </head>
@@ -37,7 +42,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:choose>
 		<xsl:when test="/*/@id = 'ficha_19'">
 			<img src="file:///android_res/drawable/logo_ecociencia.png"/>
-			<h1 align="center">42 - Registro y reacción ante presiones</h1> 
+			<img src="file:///android_res/drawable/logo_wao.png" height="80" align="right"/>
+			<h1>42 - Registro y reacción ante presiones</h1> 
 				<table id="formularios">
 					<tr> 
 						<td colspan="2">Datos del evento</td> 
@@ -74,9 +80,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 						<td>Nombre del causante</td> 
 						<td><xsl:value-of select="ficha_42/datos_press/causante_nombre"/></td> 
 					</tr>
+				<xsl:variable name="instancefolderfirst19" select="substring(ficha_42/start/text(),1,19)" />
+				<xsl:variable name="instancefolderremoveT" select="translate($instancefolderfirst19,'T','_')" />
+				<xsl:variable name="instancefolderreplacecolon" select="translate($instancefolderremoveT,':','-')" />
+				<xsl:variable name="instancefolder" select="concat('42 Registro y reacción ante presiones_',$instancefolderreplacecolon)" />
+				<xsl:variable name="foto1" select="ficha_42/datos_press/foto" />
 					<tr>
 						<td>Tomar foto</td> 
-						<td><xsl:value-of select="ficha_42/datos_press/foto"/></td>
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$foto1}" height="150"/></td>
 					</tr>
 					<tr>
 						<td>Número de cédula</td> 

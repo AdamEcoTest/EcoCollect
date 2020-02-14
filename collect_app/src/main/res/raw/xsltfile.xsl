@@ -39,10 +39,29 @@ h1  {
 </head>
 <body> 
 
+<!-- Finding the path directory for the photos -->
+<xsl:variable name="instancefolderfirst19" select="substring(ficha_42/start/text(),1,19)" />
+<xsl:variable name="instancefolderremoveT" select="translate($instancefolderfirst19,'T','_')" />
+<xsl:variable name="instancefolderreplacecolon" select="translate($instancefolderremoveT,':','-')" />
+
+
+
+
 	<xsl:choose>
 		<xsl:when test="/*/@id = 'ficha_19'">
+		
+			<!-- Instance folder path -->
+			<xsl:variable name="instancefolder" select="concat('42 Registro y reacción ante presiones_',$instancefolderreplacecolon)" />
+			<!-- Foto de datos del evento -->
+			<xsl:variable name="fotodedatos" select="ficha_42/datos_press/foto" />
+			<!-- Firma de veedor -->
+			<xsl:variable name="firmaveedor" select="ficha_42/comienza_registro_denuncia/ultimo_grupo/firma_veedor" />
+			<!-- Firma de presidente -->
+			<xsl:variable name="firmapresidente" select="ficha_42/comienza_registro_denuncia/ultimo_grupo/firma_presidente_comudidad" />
+			<!-- Logo images -->
 			<img src="file:///android_res/drawable/logo_ecociencia.png"/>
 			<img src="file:///android_res/drawable/logo_wao.png" height="80" align="right"/>
+			
 			<h1>42 - Registro y reacción ante presiones</h1> 
 				<table id="formularios">
 					<tr> 
@@ -80,14 +99,9 @@ h1  {
 						<td>Nombre del causante</td> 
 						<td><xsl:value-of select="ficha_42/datos_press/causante_nombre"/></td> 
 					</tr>
-				<xsl:variable name="instancefolderfirst19" select="substring(ficha_42/start/text(),1,19)" />
-				<xsl:variable name="instancefolderremoveT" select="translate($instancefolderfirst19,'T','_')" />
-				<xsl:variable name="instancefolderreplacecolon" select="translate($instancefolderremoveT,':','-')" />
-				<xsl:variable name="instancefolder" select="concat('42 Registro y reacción ante presiones_',$instancefolderreplacecolon)" />
-				<xsl:variable name="foto1" select="ficha_42/datos_press/foto" />
 					<tr>
 						<td>Tomar foto</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$foto1}" height="150"/></td>
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos}" height="150"/></td>
 					</tr>
 					<tr>
 						<td>Número de cédula</td> 
@@ -357,18 +371,18 @@ h1  {
 					</tr>
 					<tr>
 						<td>Firma veedor en celular</td> 
-						<td><xsl:value-of select="ficha_42/comienza_registro_denuncia/ultimo_grupo/firma_veedor"/></td> 
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmaveedor}" height="75"/></td> 
 					</tr>
 					<tr>
-						<td>Firma veedor en papel</td> 
+						<td height="100">Firma veedor en papel</td> 
 						<td></td> 
 					</tr>
 					<tr>
 						<td>Firma del presidente de la comunidad en celular</td> 
-						<td><xsl:value-of select="ficha_42/comienza_registro_denuncia/ultimo_grupo/firma_presidente_comudidad"/></td> 
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmapresidente}" height="75"/></td> 
 					</tr>
 					<tr>
-						<td>Firma del presidente de la comunidad en papel</td> 
+						<td height="100">Firma del presidente de la comunidad en papel</td> 
 						<td></td> 
 					</tr>
 				</table>

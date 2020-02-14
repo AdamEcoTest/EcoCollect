@@ -101,7 +101,7 @@ h1  {
 					</tr>
 					<tr>
 						<td>Tomar foto</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos}" height="150"/></td>
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos}" height="150" alt="NO FOTO"/></td>
 					</tr>
 					<tr>
 						<td>Número de cédula</td> 
@@ -371,7 +371,7 @@ h1  {
 					</tr>
 					<tr>
 						<td>Firma veedor en celular</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmaveedor}" height="75"/></td> 
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmaveedor}" height="75" alt="NO FIRMA"/></td> 
 					</tr>
 					<tr>
 						<td height="100">Firma veedor en papel</td> 
@@ -379,7 +379,7 @@ h1  {
 					</tr>
 					<tr>
 						<td>Firma del presidente de la comunidad en celular</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmapresidente}" height="75"/></td> 
+						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmapresidente}" height="75" alt="NO FIRMA"/></td> 
 					</tr>
 					<tr>
 						<td height="100">Firma del presidente de la comunidad en papel</td> 

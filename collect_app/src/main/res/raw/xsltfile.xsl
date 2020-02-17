@@ -59,8 +59,12 @@ h1  {
 			<!-- Firma de presidente -->
 			<xsl:variable name="firmapresidente" select="ficha_42/comienza_registro_denuncia/ultimo_grupo/firma_presidente_comudidad" />
 			<!-- Logo images -->
+			<!-- Note: these don't work in the release apk for some reason
 			<img src="file:///android_res/drawable/logo_ecociencia.png"/>
-			<img src="file:///android_res/drawable/logo_wao.png" height="80" align="right"/>
+			<img src="file:///android_res/drawable/logo_wao.jpg" height="80" align="right"/>
+			-->
+			<img src="file:///android_asset/logo_ecociencia.png"/>
+			<img src="file:///android_asset/logo_wao.jpg" height="80" align="right"/>
 			
 			<h1>42 - Registro y reacción ante presiones</h1> 
 				<table id="formularios">

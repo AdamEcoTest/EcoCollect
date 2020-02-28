@@ -73,7 +73,7 @@ the specific language governing permissions and limitations under the License.
 
     <application
         android:name="org.eco.collect.android.application.Collect"
-        android:icon="@drawable/notes"
+        android:icon="@mipmap/eco_collect_foreground"
         android:installLocation="auto"
         android:label="@string/app_name"
         android:largeHeap="true"

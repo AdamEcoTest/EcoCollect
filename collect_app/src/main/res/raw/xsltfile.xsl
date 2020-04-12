@@ -451,7 +451,7 @@ h1  {
 					</tr>
 					<tr>
 						<td>Tomar fotos</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos1}" height="150" alt="NO EXISTE LA FOTO PRINCIPAL" hspace="20"/><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos2}" height="150" alt="NO EXISTE LA SEGUNDA FOTO"/><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos3}" height="150" alt="NO EXISTE LA TERCERA FOTO" hspace="20"/></td>
+						<td align="center"><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos1}" height="150" alt="NO EXISTE PRINCIPAL FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" hspace="10"/><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos2}" height="150" alt="NO EXISTE SEGUNDA FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" /><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos3}" height="150" alt="NO EXISTE TERCERA FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" hspace="10"/></td>
 					</tr>
 					<tr>
 						<td>Nombre del causante</td> 
@@ -529,31 +529,31 @@ h1  {
 							</tr>
 							<tr>
 								<td>----> Nombre Wao</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/nombre_especie_2/nombre_wao"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/nombre_especie_2/nombre_wao"/></td> 
 							</tr>
 							<tr>
 								<td>----> Nombre Español</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/nombre_especie_2/nombre_espanol"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/nombre_especie_2/nombre_espanol"/></td> 
 							</tr>
 							<tr>
 								<td>----> Nombre Latin</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/nombre_especie_2/nombre_latin"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/nombre_especie_2/nombre_latin"/></td> 
 							</tr>
 							<tr>
 								<td>Parte de la flora usada</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/parte_usada"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/parte_usada"/></td> 
 							</tr>
 							<tr>
 								<td>Uso / ¿Colectado para...?</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/captura_flora"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/captura_flora"/></td> 
 							</tr>
 							<tr>
 								<td>Cantidad</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/cantidad"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/cantidad"/></td> 
 							</tr>
 							<tr>
 								<td>Peso (libras)</td> 
-								<td><xsl:value-of select="data/flora/comienzo_categoria_flora/peso"/></td> 
+								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/peso"/></td> 
 							</tr>
 						</table>
 					</xsl:when>
@@ -589,7 +589,7 @@ h1  {
 							</tr>
 							<tr>
 								<td>Grueso del árbol / DAP</td> 
-								<td><xsl:value-of select="data/comienza_categoria_tala/tala/medidas/grueso"/></td> 
+								<td><xsl:value-of select="data/comienza_categoria_tala/tala/medidas/arbol_grueso"/></td> 
 							</tr>
 							<tr>
 								<td>Área clareada por la caída</td> 
@@ -609,7 +609,7 @@ h1  {
 							</tr>
 							<tr>
 								<td>El área de deforestación (ha)</td> 
-								<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/shape_area"/></td> 
+								<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/rounded_shape_area"/></td> 
 							</tr>
 							<tr>
 								<td>¿Deforestado para...?</td> 
@@ -628,7 +628,7 @@ h1  {
 					
 					<xsl:when test="data/datos_press/press = 'Contaminación'">
 						<xsl:choose>
-							<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/tipo_de_cont = 'env_rio'">
+							<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/tipo_de_cont = 'Envenenamiento'">
 								<table id="formularios">
 									<tr>
 										<td colspan="2">Contaminación</td> 
@@ -652,7 +652,7 @@ h1  {
 								</table>
 							</xsl:when>
 							
-							<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/tipo_de_cont = 'aceite'">
+							<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/tipo_de_cont = 'Derrame de aceite/motor canoa'">
 								<table id="formularios">
 									<tr>
 										<td colspan="2">Contaminación</td> 
@@ -671,12 +671,12 @@ h1  {
 									</tr>
 									<tr>
 										<td>Cantidad de derrame de aceite</td> 
-										<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_aceite/cantidad"/></td> 
+										<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_aceite/cantidad_aceite"/></td> 
 									</tr>
 								</table>
 							</xsl:when>
 							
-							<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/tipo_de_cont = 'petroleo'">
+							<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/tipo_de_cont = 'Derrame por petrolera'">
 								<table id="formularios">
 									<tr>
 										<td colspan="2">Contaminación</td> 

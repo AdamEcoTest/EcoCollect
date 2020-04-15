@@ -507,6 +507,14 @@ h1  {
 								<td>¿Captura para...?</td> 
 								<td><xsl:value-of select="data/comienzo_categoria_fauna/fauna/captura_fauna"/></td> 
 							</tr>
+							<xsl:choose>
+								<xsl:when test="data/comienzo_categoria_fauna/fauna/captura_fauna = 'Otro'">
+										<tr>
+											<td>Especifique otro</td> 
+											<td><xsl:value-of select="data/comienzo_categoria_fauna/fauna/otro_captura_fauna"/></td> 
+										</tr>	
+								</xsl:when>
+							</xsl:choose>
 							<tr>
 								<td>Edad de la especie</td> 
 								<td><xsl:value-of select="data/comienzo_categoria_fauna/fauna/edad_fauna"/></td> 
@@ -543,10 +551,26 @@ h1  {
 								<td>Parte de la flora usada</td> 
 								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/parte_usada"/></td> 
 							</tr>
+							<xsl:choose>
+								<xsl:when test="data/comienzo_categoria_flora/flora/parte_usada = 'Otro'">
+										<tr>
+											<td>Especifique otro</td> 
+											<td><xsl:value-of select="data/comienzo_categoria_flora/flora/otro_flora_usada"/></td> 
+										</tr>	
+								</xsl:when>
+							</xsl:choose>
 							<tr>
 								<td>Uso / ¿Colectado para...?</td> 
 								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/captura_flora"/></td> 
 							</tr>
+							<xsl:choose>
+								<xsl:when test="data/comienzo_categoria_flora/flora/captura_flora = 'Otro'">
+										<tr>
+											<td>Especifique otro</td> 
+											<td><xsl:value-of select="data/comienzo_categoria_flora/flora/otro_captura_flora"/></td> 
+										</tr>	
+								</xsl:when>
+							</xsl:choose>
 							<tr>
 								<td>Cantidad</td> 
 								<td><xsl:value-of select="data/comienzo_categoria_flora/flora/cantidad"/></td> 
@@ -583,6 +607,14 @@ h1  {
 								<td>¿Cortado para...?</td> 
 								<td><xsl:value-of select="data/comienza_categoria_tala/tala/uso_tala"/></td> 
 							</tr>
+							<xsl:choose>
+								<xsl:when test="data/comienza_categoria_tala/tala/uso_tala = 'Otro'">
+										<tr>
+											<td>Especifique otro</td> 
+											<td><xsl:value-of select="data/comienza_categoria_tala/tala/otro_uso_tala"/></td> 
+										</tr>	
+								</xsl:when>
+							</xsl:choose>
 							<tr>
 								<td>Alto del árbol (metros)</td> 
 								<td><xsl:value-of select="data/comienza_categoria_tala/tala/medidas/alto"/></td> 
@@ -615,10 +647,26 @@ h1  {
 								<td>¿Deforestado para...?</td> 
 								<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/uso_def"/></td> 
 							</tr>
+							<xsl:choose>
+								<xsl:when test="data/comienza_categoria_deforestacion/cat_deforestacion/uso_def = 'Otro'">
+										<tr>
+											<td>Especifique otro</td> 
+											<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/otro_uso_def"/></td> 
+										</tr>	
+								</xsl:when>
+							</xsl:choose>
 							<tr>
 								<td>Se uso-aserró los árboles</td> 
 								<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/uso_aserro"/></td> 
 							</tr>
+							<xsl:choose>
+								<xsl:when test="data/comienza_categoria_deforestacion/cat_deforestacion/uso_aserro = 'Sí'">
+										<tr>
+											<td>Para qué?</td> 
+											<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/uso_aserro_si"/></td> 
+										</tr>	
+								</xsl:when>
+							</xsl:choose>
 							<tr>
 								<td>Habitat de la deforestación</td> 
 								<td><xsl:value-of select="data/comienza_categoria_deforestacion/cat_deforestacion/comienza_habitat/habitat_def"/></td> 
@@ -649,6 +697,14 @@ h1  {
 										<td>Con que motivo envenenó</td> 
 										<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_envenenamiento/envenena_motivo"/></td> 
 									</tr>
+									<xsl:choose>
+										<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_envenenamiento/envenena_motivo = 'Otro'">
+											<tr>
+												<td>Especifique otro</td> 
+												<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_envenenamiento/otro_envenena_motivo"/></td> 
+											</tr>	
+										</xsl:when>
+									</xsl:choose>
 								</table>
 							</xsl:when>
 							
@@ -665,6 +721,14 @@ h1  {
 										<td>Contaminación en</td> 
 										<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_aceite/tipo_derrame"/></td> 
 									</tr>
+									<xsl:choose>
+										<xsl:when test="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_aceite/tipo_derrame = 'Otro'">
+											<tr>
+												<td>Especifique otro</td> 
+												<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_aceite/otro_tipo_derrame"/></td> 
+											</tr>	
+										</xsl:when>
+									</xsl:choose>
 									<tr>
 										<td>Lugar donde ocurrió</td> 
 										<td><xsl:value-of select="data/comienza_categoria_contaminacion/categoria_contaminacion/comienza_contaminacion_aceite/lugar"/></td> 

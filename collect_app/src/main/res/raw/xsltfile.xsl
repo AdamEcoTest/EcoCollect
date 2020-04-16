@@ -682,8 +682,8 @@ h1  {
 										<td colspan="2">Contaminación</td> 
 									</tr>
 									<tr>
-										<td><b>Envenenamiento</b></td> 
-										<td></td>
+										<td>Tipo de contaminación</td> 
+										<td>Envenenamiento</td>
 									</tr>
 									<tr>
 										<td>Quien es el responsable del envenenamiento</td> 
@@ -714,8 +714,8 @@ h1  {
 										<td colspan="2">Contaminación</td> 
 									</tr>							
 									<tr>
-										<td><b>Derrame de aceite / motor canoa</b></td> 
-										<td></td>
+										<td>Tipo de contaminación</td> 
+										<td>Derrame de aceite / motor canoa</td>
 									</tr>
 									<tr>
 										<td>Contaminación en</td> 
@@ -746,8 +746,8 @@ h1  {
 										<td colspan="2">Contaminación</td> 
 									</tr>						
 									<tr>
-										<td><b>Derrame por petrolera</b></td> 
-										<td></td>
+										<td>Tipo de contaminación</td>  
+										<td>Derrame por petrolera</td>
 									</tr>
 									<tr>
 										<td>Que componente se vió afectado</td> 
@@ -808,16 +808,30 @@ h1  {
 						<td><xsl:value-of select="data/comienza_registro_denuncia/ultimo_grupo/accion_recomendada"/></td> 
 					</tr>
 					<tr>
-						<td>Firma veedor en celular</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmaveedor}" height="75" alt="NO FIRMA"/></td> 
-					</tr>
+						<td>Firma veedor en celular</td>
+						<xsl:choose>
+							<xsl:when test="data/comienza_registro_denuncia/ultimo_grupo/firma_veedor != ''" > 
+								<td height="100"><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmaveedor}" height="75" alt="NO FIRMA"/></td>  
+							</xsl:when>
+							<xsl:otherwise>
+								<td  height="100" style="color:e5e5e5; font-size: 20px; font-family:Arial"><i>FIRMA NO CAPTURADO</i></td>
+							</xsl:otherwise>
+						</xsl:choose>
+					</tr>	
 					<tr>
 						<td height="100">Firma veedor en papel</td> 
 						<td></td> 
 					</tr>
 					<tr>
-						<td>Firma del presidente de la comunidad en celular</td> 
-						<td><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmapresidente}" height="75" alt="NO FIRMA"/></td> 
+						<td>Firma del presidente de la comunidad en celular</td>
+						<xsl:choose>
+							<xsl:when test="data/comienza_registro_denuncia/ultimo_grupo/firma_presidente_comudidad != ''" > 
+								<td height="100"><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$firmapresidente}" height="75" alt="NO FIRMA"/></td>  
+							</xsl:when>
+							<xsl:otherwise>
+								<td  height="100" style="color:e5e5e5; font-size: 20px; font-family:Arial"><i>FIRMA NO CAPTURADO</i></td>
+							</xsl:otherwise>
+						</xsl:choose>
 					</tr>
 					<tr>
 						<td height="100">Firma del presidente de la comunidad en papel</td> 

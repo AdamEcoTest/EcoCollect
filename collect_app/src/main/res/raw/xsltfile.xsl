@@ -11,6 +11,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 40px;
+  font-size: 110%;
 }
 
 #formularios td, #formularios th {
@@ -389,8 +390,8 @@ h1  {
 					</tr>
 				</table>
 		</xsl:when>
-		<!-- 'adam_42_Registro y reacción ante presiones' Form -->
-		<xsl:when test="/*/@id = 'adam_ficha_19'">
+		<!-- '42_Registro y reacción ante presiones - versión 2' Form -->
+		<xsl:when test="/*/@id = '42_presiones_v2'">
 		
 		    <!-- Finding the path directory for the photos -->
             <xsl:variable name="instancefolderfirst19" select="substring(data/start/text(),1,19)" />
@@ -398,7 +399,7 @@ h1  {
             <xsl:variable name="instancefolderreplacecolon" select="translate($instancefolderremoveT,':','-')" />
 		
 			<!-- Instance folder path -->
-			<xsl:variable name="instancefolder" select="concat('adam 42 Registro y reacción ante presiones_',$instancefolderreplacecolon)" />
+			<xsl:variable name="instancefolder" select="concat('42 Registro y reacción ante presiones versión 2_',$instancefolderreplacecolon)" />
 			
 			<!-- Foto de datos del evento -->
 			<xsl:variable name="fotodedatos1" select="data/datos_press/foto1" />
@@ -416,7 +417,10 @@ h1  {
 			<img src="file:///android_asset/logo_wao.jpg" height="80" align="right"/>
 			
 			<!-- Form content -->
-			<h1>42 - Registro y reacción ante presiones</h1> 
+			<br></br>
+			<br></br>
+			<h1>42 - Registro y reacción ante presiones</h1>
+			<br></br>			
 				<table id="formularios">
 					<tr> 
 						<td colspan="2">Datos del evento</td> 
@@ -442,7 +446,7 @@ h1  {
 						<td><xsl:value-of select="data/datos_press/hora"/></td> 
 					</tr>
 					<tr>
-						<td>Tomar punto GPS</td> 
+						<td>Punto GPS</td> 
 						<td><xsl:value-of select="data/datos_press/coordenadas"/></td> 
 					</tr>
 					<tr>
@@ -450,8 +454,30 @@ h1  {
 						<td><xsl:value-of select="data/datos_press/descripcion_sitio"/></td> 
 					</tr>
 					<tr>
-						<td>Tomar fotos</td> 
-						<td align="center"><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos1}" height="150" alt="NO EXISTE PRINCIPAL FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" hspace="10"/><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos2}" height="150" alt="NO EXISTE SEGUNDA FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" /><img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos3}" height="150" alt="NO EXISTE TERCERA FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" hspace="10"/></td>
+						<td>Fotos de la presion o amenaza</td> 
+						<td>
+							<xsl:choose>
+								<xsl:when test="data/datos_press/foto1 != ''" > 
+									<img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos1}" height="190" alt="NO EXISTE PRINCIPAL FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" hspace="10"/>
+								</xsl:when>
+								<xsl:otherwise>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:choose>
+								<xsl:when test="data/datos_press/foto2 != ''" > 
+									<img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos2}" height="190" alt="NO EXISTE SEGUNDA FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" />
+								</xsl:when>
+								<xsl:otherwise>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:choose>
+								<xsl:when test="data/datos_press/foto3 != ''" > 
+									<img src="file:///storage/emulated/0/odk/instances/{$instancefolder}/{$fotodedatos3}" height="190" alt="NO EXISTE TERCERA FOTO" style="white-space:pre-wrap; color:e5e5e5; font-size: 30px; font-family:Arial" hspace="10"/>
+								</xsl:when>
+								<xsl:otherwise>
+								</xsl:otherwise>
+							</xsl:choose>
+						</td>
 					</tr>
 					<tr>
 						<td>Nombre del causante</td> 
